@@ -10,9 +10,8 @@ function *bubble(
   let count = 0;
   let lastIndex = arr.length;
 
-  while (true) {
+  while (arr.length > 0) {
     lastIndex = lastIndex - 1;
-    if (arr.length <= 0) break;
     if (count === arr.length) {
       yield arr.shift();
       count = 0;
