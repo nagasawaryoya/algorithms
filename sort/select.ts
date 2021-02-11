@@ -1,8 +1,8 @@
 /**
  * 引数で受け取った配列を選択ソートして返却する。
  *
- * @param arr number[] ソートする配列
- * @returns Generator<number | undefined, void, unknown>
+ * @param {number[]} arr ソートする配列
+ * @returns {Generator<number | undefined, void, unknown>}
  */
 function *select(
   arr: number[]
