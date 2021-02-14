@@ -1,4 +1,4 @@
-import { Util } from './util'
+import { Util } from './util';
 
 /**
  * 引数で受け取った配列をバブルソートして返却する。
@@ -6,9 +6,7 @@ import { Util } from './util'
  * @param {number[]} arr ソートする配列
  * @returns {Generator<number | undefined, void, unknown>}
  */
-function *bubble(
-  arr: number[]
-): Generator<number | undefined, void, unknown> {
+function* bubble(arr: number[]): Generator<number | undefined, void, unknown> {
   let count = 0;
   let lastIndex = arr.length;
 

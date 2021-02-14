@@ -1,4 +1,4 @@
-import { Util } from "./util";
+import { Util } from './util';
 
 type HeapNodeCount = ReadonlyArray<1 | 2>;
 const HEAP_NODE_COUNT: HeapNodeCount = [1, 2];
@@ -6,15 +6,9 @@ const HEAP_NODE_COUNT: HeapNodeCount = [1, 2];
 /**
  * 親ノードのindex探索
  */
-const getParentNodeIndex = ({
-  array,
-  nodeIndex,
-}: {
-  array: number[];
-  nodeIndex: number;
-}): number | null =>
+const getParentNodeIndex = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number | null =>
   HEAP_NODE_COUNT.map((count) =>
-    Util.is(array[(nodeIndex - count) / 2]) ? (nodeIndex - count) / 2 : null
+    Util.is(array[(nodeIndex - count) / 2]) ? (nodeIndex - count) / 2 : null,
   ).filter((pNodeIndex) => Util.is(pNodeIndex))[0];
 
 const createHeap = (array: number[]): number[] => {
@@ -53,32 +47,16 @@ const createHeap = (array: number[]): number[] => {
  * (n - 1) / 2
  * (n - 2) / 2
  */
-const getParentNode = ({
-  array,
-  nodeIndex,
-}: {
-  array: number[];
-  nodeIndex: number;
-}): number | null =>
-  array[(nodeIndex - HEAP_NODE_COUNT[0]) / 2] ??
-  array[(nodeIndex - HEAP_NODE_COUNT[1]) / 2] ??
-  null;
+const getParentNode = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number | null =>
+  array[(nodeIndex - HEAP_NODE_COUNT[0]) / 2] ?? array[(nodeIndex - HEAP_NODE_COUNT[1]) / 2] ?? null;
 
 /**
  * 子ノードの探索
  * 2n + 1
  * 2n + 2
  */
-const getChildNodes = ({
-  array,
-  nodeIndex,
-}: {
-  array: number[];
-  nodeIndex: number;
-}): number[] | null => {
-  const childs = HEAP_NODE_COUNT.map(
-    (count) => array[2 * nodeIndex + count]
-  ).filter((cNode) => Util.is(cNode));
+const getChildNodes = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number[] | null => {
+  const childs = HEAP_NODE_COUNT.map((count) => array[2 * nodeIndex + count]).filter((cNode) => Util.is(cNode));
 
   return childs.length ? childs : null;
 };

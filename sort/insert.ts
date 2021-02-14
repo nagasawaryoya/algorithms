@@ -1,4 +1,4 @@
-import { Util } from './util'
+import { Util } from './util';
 
 /**
  * 引数で受け取った配列を挿入ソートして返却する。
@@ -7,7 +7,7 @@ import { Util } from './util'
  * @returns {number[]}
  */
 function insert(arr: number[]): number[] {
-  let count = 0
+  let count = 0;
   let current = count;
   while (count < arr.length) {
     if (current >= 0 && arr[current] < arr[current - 1]) {
