@@ -23,7 +23,7 @@ const getParentNodeIndex = ({ array, nodeIndex }: { array: number[]; nodeIndex: 
  */
 const createHeap = (array: number[]): number[] => {
   let currentIndex = 0;
-  while (array.length > currentIndex) {
+  while (Util.compare({ expectBig: array.length, expectSmall: currentIndex })) {
     const pNodeIndex = getParentNodeIndex({
       array: array,
       nodeIndex: currentIndex,
