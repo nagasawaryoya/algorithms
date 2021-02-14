@@ -56,7 +56,7 @@ const getParentNode = ({ array, nodeIndex }: { array: number[]; nodeIndex: numbe
  * 2n + 2
  */
 const getChildNodes = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number[] | null => {
-  const childs = HEAP_NODE_COUNT.map((count) => array[2 * nodeIndex + count]).filter((cNode) => Util.is(cNode));
+  const children = HEAP_NODE_COUNT.map((count) => array[2 * nodeIndex + count]).filter((cNode) => Util.is(cNode));
 
-  return childs.length ? childs : null;
+  return children.length ? children : null;
 };
