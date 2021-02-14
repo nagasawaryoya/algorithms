@@ -12,7 +12,7 @@ export class Util {
    *
    * @param {T} expectBig 比較時に大きいと予想している値
    * @param {T} expectSmall 比較時に小さいと予想している値
-   * @returns {boolean}} true: expectBigの方がexpectSmallより大きい false: expectBigの方がexpectSmallより小さい
+   * @returns {boolean} true: expectBigの方がexpectSmallより大きい false: expectBigの方がexpectSmallより小さい
    */
   public static compare = <T>({ expectBig, expectSmall }: { expectBig: T; expectSmall: T }): boolean =>
     expectBig > expectSmall;
