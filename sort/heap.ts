@@ -7,8 +7,8 @@ const HEAP_NODE_COUNT: HeapNodeCount = [1, 2];
  * 親ノードのindexを探索する。
  *
  * @param {number[]} array 探索配列
- * @param {number[]} array 探索の基準となるノードのindex
- * @returns {number[] | null} 探索の基準の数値に対する親ノードのindex（存在しない場合はnullを返す）
+ * @param {number} array 探索の基準となるノードのindex
+ * @returns {number | null} 探索の基準の数値に対する親ノードのindex（存在しない場合はnullを返す）
  */
 const getParentNodeIndex = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number | null =>
   HEAP_NODE_COUNT.map((count) =>
@@ -58,7 +58,7 @@ const createHeap = (array: number[]): number[] => {
  * (n - 2) / 2
  *
  * @param {number[]} array 探索配列
- * @param {number[]} array 探索の基準となるノードのindex
+ * @param {number} array 探索の基準となるノードのindex
  * @returns {number | null} 探索の基準の数値に対する親ノード（存在しない場合はnullを返す）
  */
 const getParentNode = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number | null =>
@@ -70,7 +70,7 @@ const getParentNode = ({ array, nodeIndex }: { array: number[]; nodeIndex: numbe
  * 2n + 2
  *
  * @param {number[]} array 探索配列
- * @param {number[]} array 探索の基準となるノードのindex
+ * @param {number} array 探索の基準となるノードのindex
  * @returns {number[] | null} 探索の基準の数値に対する子ノードの配列（存在しない場合はnullを返す）
  */
 const getChildNodes = ({ array, nodeIndex }: { array: number[]; nodeIndex: number }): number[] | null => {
