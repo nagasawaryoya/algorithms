@@ -4,6 +4,20 @@ type HeapNodeCount = ReadonlyArray<1 | 2>;
 const HEAP_NODE_COUNT: HeapNodeCount = [1, 2];
 
 /**
+ * 引数で受け取った配列をヒープソートして返却する。
+ *
+ * @param {number[]} arr ソートする配列
+ * @returns {number[]}
+ */
+const heap = (arr: number[]) => {
+  const sorted: number[] = [];
+  while(arr.length > 0) {
+    sorted.push(createHeap(arr).splice(0, 1)[0]);
+  }
+  return sorted;
+}
+
+/**
  * 親ノードのindexを探索する。
  *
  * @param {number[]} array 探索配列
