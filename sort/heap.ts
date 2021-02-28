@@ -9,7 +9,7 @@ const HEAP_NODE_COUNT: HeapNodeCount = [1, 2];
  * @param {number[]} arr ソートする配列
  * @returns {number[]}
  */
-const heap = (arr: number[]) => {
+const heap = (arr: number[]): number[] => {
   const sorted: number[] = [];
   while(arr.length > 0) {
     sorted.push(createHeap(arr).splice(0, 1)[0]);
